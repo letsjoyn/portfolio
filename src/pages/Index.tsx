@@ -48,18 +48,17 @@ const Index = () => {
       {/* Main Content Container - Solid Black Box */}
       <div className="relative z-10 max-w-3xl mx-auto min-h-screen bg-black border-x border-zinc-800 shadow-2xl px-6 md:px-10 py-6 flex flex-col gap-8">
 
-        {/* Floating Circular Navbar */}
-        <nav className="flex justify-center mb-0 sticky top-4 z-50">
-          <div className="flex gap-1 bg-zinc-900/90 backdrop-blur-md px-1.5 py-1 rounded-full border border-zinc-800 shadow-lg flex-wrap justify-center">
+        <nav className="flex justify-center mb-6 mt-4 w-full z-50">
+          <div className="flex gap-2 overflow-x-auto scrollbar-minimal pb-2 max-w-full mx-4 sm:mx-0 whitespace-nowrap mask-gradient">
             {['About', 'Experience', 'Projects', 'Achievements', 'Volunteering', 'Education'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
                 className={cn(
-                  "px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-medium transition-all duration-300",
+                  "px-3 py-1.5 md:px-4 md:py-2 rounded-md text-[10px] md:text-xs tracking-wider transition-all duration-300 shrink-0 border border-dashed",
                   activeSection === item.toLowerCase()
-                    ? "bg-zinc-800 text-white"
-                    : "text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/50"
+                    ? "border-zinc-500 text-white bg-zinc-900/50"
+                    : "border-zinc-800 text-zinc-500 hover:text-zinc-300 hover:border-zinc-600 hover:bg-zinc-900/30"
                 )}
               >
                 {item}
@@ -69,7 +68,7 @@ const Index = () => {
         </nav>
 
         {/* Header / About Section */}
-        <header id="about" className="flex flex-col gap-6 pt-2">
+        <header id="about" className="flex flex-col gap-6 pt-2 scroll-mt-32">
           <div className="flex flex-col gap-3">
             <div className="relative w-16 h-16 shrink-0">
               <img
@@ -80,7 +79,7 @@ const Index = () => {
             </div>
             <div>
               <h1 className="text-3xl sm:text-4xl font-serif font-medium tracking-tight text-white mb-1.5">
-                Hi, I'm Nayvedya
+                Hi, I'm Nayvedya Shrivastava
               </h1>
               <p className="text-xs text-zinc-500 font-mono">
                 frontend • backend • devops • competitive programmer
@@ -118,7 +117,7 @@ const Index = () => {
         </header>
 
         {/* Experience Section */}
-        <section id="experience" className="flex flex-col gap-6">
+        <section id="experience" className="flex flex-col gap-6 scroll-mt-32">
           <SectionHeader title="Places I've Made an Impact" />
           <div className="flex flex-col gap-8 pl-1">
             <ExperienceItem
@@ -137,7 +136,7 @@ const Index = () => {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="flex flex-col gap-6">
+        <section id="projects" className="flex flex-col gap-6 scroll-mt-32">
           <SectionHeader title="Things I've Built" />
           <div className="grid grid-cols-1 gap-6">
             <ProjectCard
@@ -159,7 +158,7 @@ const Index = () => {
         </section>
 
         {/* Achievements Section */}
-        <section id="achievements" className="flex flex-col gap-6">
+        <section id="achievements" className="flex flex-col gap-6 scroll-mt-32">
           <SectionHeader title="Achievements" />
           <div className="flex flex-col gap-4 pl-1">
             <AchievementItem
@@ -186,7 +185,7 @@ const Index = () => {
         </section>
 
         {/* Volunteering Section */}
-        <section id="volunteering" className="flex flex-col gap-6">
+        <section id="volunteering" className="flex flex-col gap-6 scroll-mt-32">
           <SectionHeader title="Volunteering" />
           <div className="flex flex-col gap-8 pl-1">
             <div className="group">
@@ -223,7 +222,7 @@ const Index = () => {
         </section>
 
         {/* Education Section */}
-        <section id="education" className="flex flex-col gap-6">
+        <section id="education" className="flex flex-col gap-6 scroll-mt-32">
           <SectionHeader title="Education" />
           <div className="flex flex-col gap-6 pl-1">
             <EducationItem
@@ -264,7 +263,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[10px] font-mono text-zinc-600">
             <div className="flex flex-col gap-0.5">
               <span>
-                Designed & Developed by <span className="text-zinc-300 font-semibold">Nayvedya</span>
+                Designed & Developed by <span className="text-zinc-300 font-semibold">Nayvedya Shrivastava</span>
               </span>
               <span>©2025. All rights reserved.</span>
             </div>
@@ -276,7 +275,7 @@ const Index = () => {
           </div>
         </footer>
       </div>
-    </div>
+    </div >
   );
 };
 
@@ -356,9 +355,9 @@ const ProjectCard = ({ title, tech, description }: { title: string; tech: string
 );
 
 const AchievementItem = ({ title, detail }: { title: string; detail: string }) => (
-  <div className="group flex flex-col md:flex-row md:items-baseline gap-1 md:gap-2">
-    <h3 className="text-xs font-bold text-zinc-200">{title}:</h3>
-    <p className="text-xs text-zinc-500">{detail}</p>
+  <div className="group flex flex-col gap-1 mb-2">
+    <h3 className="text-base font-serif text-zinc-200 group-hover:text-neon-green transition-colors">{title}</h3>
+    <p className="text-xs text-zinc-500 font-urbanist leading-relaxed">{detail}</p>
   </div>
 );
 
