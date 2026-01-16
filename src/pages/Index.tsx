@@ -107,11 +107,11 @@ const Index = () => {
             </div>
 
             <div className="flex flex-wrap gap-1.5 mt-1 opacity-80">
-              <SocialIcon href="https://youtube.com/@letsjoyn" icon={<Youtube className="w-3.5 h-3.5" />} />
-              <SocialIcon href="https://instagram.com/letsjoyn" icon={<Instagram className="w-3.5 h-3.5" />} />
-              <SocialIcon href="https://codeforces.com/profile/joynnayvedya" icon={<Swords className="w-3.5 h-3.5" />} />
-              <SocialIcon href="https://leetcode.com/u/letsjoyn/" icon={<Puzzle className="w-3.5 h-3.5" />} />
-              <SocialIcon href="https://community.aws/@letsjoyn" icon={<Cloud className="w-3.5 h-3.5" />} />
+              <SocialIcon href="https://youtube.com/@letsjoyn" icon={<Youtube className="w-4 h-4" />} />
+              <SocialIcon href="https://instagram.com/letsjoyn" icon={<Instagram className="w-4 h-4" />} />
+              <SocialIcon href="https://codeforces.com/profile/joynnayvedya" icon={<Swords className="w-4 h-4" />} />
+              <SocialIcon href="https://leetcode.com/u/letsjoyn/" icon={<Puzzle className="w-4 h-4" />} />
+              <SocialIcon href="https://community.aws/@letsjoyn" icon={<Cloud className="w-4 h-4" />} />
             </div>
           </div>
         </header>
@@ -288,7 +288,7 @@ const SectionHeader = ({ title }: { title: string }) => (
 );
 
 const SocialLinkInline = ({ href, label }: { href: string, label: string }) => (
-  <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-zinc-800 text-zinc-100 text-[10px] rounded hover:bg-zinc-700 transition-colors mx-0.5">
+  <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 px-2 py-1 bg-zinc-800 text-zinc-100 text-xs rounded hover:bg-zinc-700 transition-colors mx-0.5">
     {label}
   </a>
 )
@@ -299,7 +299,7 @@ const SocialPill = ({ href, label, highlight }: { href: string; label: string, h
     target="_blank"
     rel="noopener noreferrer"
     className={cn(
-      "px-2.5 py-0.5 rounded text-[10px] font-medium transition-all duration-300 border",
+      "px-3 py-1.5 rounded text-xs font-medium transition-all duration-300 border",
       highlight
         ? "bg-zinc-100 text-black border-zinc-100 hover:bg-zinc-300"
         : "bg-zinc-900 text-zinc-400 border-zinc-800 hover:text-zinc-200 hover:border-zinc-600 hover:bg-zinc-800"
@@ -310,7 +310,7 @@ const SocialPill = ({ href, label, highlight }: { href: string; label: string, h
 );
 
 const SocialIcon = ({ href, icon }: { href: string; icon: React.ReactNode }) => (
-  <a href={href} target="_blank" rel="noreferrer" className="p-1.5 bg-zinc-900 text-zinc-500 rounded-full hover:text-zinc-200 hover:bg-zinc-800 transition-colors">
+  <a href={href} target="_blank" rel="noreferrer" className="p-2 bg-zinc-900 text-zinc-500 rounded-full hover:text-zinc-200 hover:bg-zinc-800 transition-colors">
     {icon}
   </a>
 )
