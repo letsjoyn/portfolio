@@ -100,7 +100,7 @@ const Index = () => {
             {/* Consolidated Links */}
             <div className="flex flex-wrap gap-1.5 items-center">
               <SocialPill href="https://github.com/letsjoyn" label="GitHub" />
-              <SocialPill href="https://linkedin.com/in/letsjoyn" label="LinkedIn" />
+              <SocialPill href="https://www.linkedin.com/in/letsjoyn/" label="LinkedIn" />
               <SocialPill href="/resume.pdf" label="Resume" highlight />
               <span className="text-zinc-600 px-1 text-xs">?</span>
               <span className="text-zinc-500 text-[10px] italic">Yep, they're all unlocked if you're curious.</span>
