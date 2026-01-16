@@ -1,7 +1,15 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+}
 
 /* Cyberpunk Hacker Theme Design System with Urbanist */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
