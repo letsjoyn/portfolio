@@ -55,7 +55,7 @@ const Index = () => {
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
                 className={cn(
-                  "px-3 py-1.5 md:px-4 md:py-2 rounded-md text-[10px] md:text-xs tracking-wider transition-all duration-300 shrink-0 border border-dashed",
+                  "px-4 py-2.5 md:px-4 md:py-2 rounded-md text-sm md:text-sm tracking-wider transition-all duration-300 shrink-0 border border-dashed",
                   activeSection === item.toLowerCase()
                     ? "border-zinc-500 text-white bg-zinc-900/50"
                     : "border-zinc-800 text-zinc-500 hover:text-zinc-300 hover:border-zinc-600 hover:bg-zinc-900/30"

@@ -263,7 +263,7 @@
 /* Custom Scrollbar Utilities */
 .scrollbar-minimal {
   scrollbar-width: thin;
-  scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
+  scrollbar-color: #888 transparent;
 }
 
 .scrollbar-minimal::-webkit-scrollbar {
@@ -278,12 +278,12 @@
 }
 
 .scrollbar-minimal::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground) / 0.3);
+  background: #888;
   border-radius: 99px;
 }
 
 .scrollbar-minimal::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground) / 0.5);
+  background: #666;
 }
 
 /* Enhanced Keyframes */
