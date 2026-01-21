@@ -344,3 +344,12 @@
       0 0 16px hsl(var(--neon-green) / 0.08);
   }
 }
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

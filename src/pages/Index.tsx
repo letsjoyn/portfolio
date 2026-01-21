@@ -1,7 +1,20 @@
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Linkedin, Github, Twitter, Mail, FileText, ExternalLink, Youtube, Instagram, Swords, Puzzle, Cloud, Video, Play, Gamepad2, Trophy, Medal } from 'lucide-react';
 import LetterGlitch from '../components/LetterGlitch';
+import CodeforcesRating from '../components/CodeforcesRating';
+import LeetCodeRating from '../components/LeetCodeRating';
+import { CodeforcesBrandIcon, LeetCodeBrandIcon } from '../components/Icons';
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 import { cn } from "@/lib/utils";
 
 const Index = () => {
@@ -89,29 +102,56 @@ const Index = () => {
 
           <p className="text-sm leading-relaxed text-zinc-400 max-w-xl font-light">
             I am a <span className="text-zinc-200 font-medium">2nd-year student</span> expanding my knowledge into Data Structures, Computer Concepts, and Full Stack Development while building real-world projects.
-            Currently organizing cloud workshops at <span className="text-white">AWS Cloud Club</span>.
           </p>
 
           <div className="flex flex-col gap-3">
             <p className="text-xs text-zinc-500">
-              Available for freelance or full-time roles. Slide into my <SocialLinkInline href="https://x.com/letsjoyn" label="DMs" /> or <SocialLinkInline href="mailto:joynnayvedya@gmail.com" label="Email" /> me.
+              Available for freelance or full-time roles. Slide into my <SocialLinkInline href="https://x.com/letsjoyn" label="DMs" icon={<Twitter className="w-3 h-3" />} /> or <SocialLinkInline href="mailto:joynnayvedya@gmail.com" label="Email" icon={<Mail className="w-3 h-3" />} /> me.
             </p>
 
             {/* Consolidated Links */}
             <div className="flex flex-wrap gap-1.5 items-center">
-              <SocialPill href="https://github.com/letsjoyn" label="GitHub" />
-              <SocialPill href="https://www.linkedin.com/in/letsjoyn/" label="LinkedIn" />
+              <SocialPill href="https://github.com/letsjoyn" label="GitHub" icon={<Github className="w-3.5 h-3.5" />} />
+              <SocialPill href="https://www.linkedin.com/in/letsjoyn/" label="LinkedIn" icon={<Linkedin className="w-3.5 h-3.5" />} />
               <SocialPill href="/resume.pdf" label="Resume" highlight />
               <span className="text-zinc-600 px-1 text-xs">?</span>
               <span className="text-zinc-500 text-[10px] italic">Yep, they're all unlocked if you're curious.</span>
             </div>
 
-            <div className="flex flex-wrap gap-1.5 mt-1 opacity-80">
-              <SocialIcon href="https://youtube.com/@letsjoyn" icon={<Youtube className="w-4 h-4" />} />
-              <SocialIcon href="https://instagram.com/letsjoyn" icon={<Instagram className="w-4 h-4" />} />
-              <SocialIcon href="https://codeforces.com/profile/joynnayvedya" icon={<Swords className="w-4 h-4" />} />
-              <SocialIcon href="https://leetcode.com/u/letsjoyn/" icon={<Puzzle className="w-4 h-4" />} />
-              <SocialIcon href="https://community.aws/@letsjoyn" icon={<Cloud className="w-4 h-4" />} />
+            <div className="flex flex-wrap gap-2 mt-2 opacity-100">
+              <Popover>
+                <PopoverTrigger asChild>
+                  <SocialIcon
+                    icon={
+                      <div className="flex items-center gap-2.5">
+                        <CodeforcesBrandIcon className="w-5 h-5" />
+                        <span className="font-medium text-sm">Codeforces</span>
+                      </div>
+                    }
+                    className="px-5 py-2.5 w-auto bg-[#1f2024] hover:bg-[#2d2e32] border border-transparent hover:border-blue-500/30 text-zinc-300 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-500/20"
+                  />
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0 border-none bg-transparent shadow-none" side="bottom" align="start" sideOffset={5} collisionPadding={10}>
+                  <CodeforcesRating />
+                </PopoverContent>
+              </Popover>
+
+              <Popover>
+                <PopoverTrigger asChild>
+                  <SocialIcon
+                    icon={
+                      <div className="flex items-center gap-2.5">
+                        <LeetCodeBrandIcon className="w-5 h-5" />
+                        <span className="font-medium text-sm">LeetCode</span>
+                      </div>
+                    }
+                    className="px-5 py-2.5 w-auto bg-[#1f2024] hover:bg-[#2d2e32] border border-transparent hover:border-orange-500/30 text-zinc-300 hover:text-white transition-all duration-300 shadow-lg hover:shadow-orange-500/20"
+                  />
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0 border-none bg-transparent shadow-none" side="bottom" align="start" sideOffset={5} collisionPadding={10}>
+                  <LeetCodeRating />
+                </PopoverContent>
+              </Popover>
             </div>
           </div>
         </header>
@@ -230,45 +270,73 @@ const Index = () => {
               school="M.S. Ramaiah Institute of Technology"
               period="Expected 2028"
               details="Active member of technical societies. Secured 1st Place in AI Codefin 2024."
+              status="in-progress"
+              score="9.47 CGPA (till 2nd sem)"
             />
             <EducationItem
-              degree="Class XII (PCM) - 93.4%"
+              degree="Class XII (PCM)"
               school="Mahatma Hansraj Modern School"
               period="Completed"
               details="Strong foundation in Mathematics and Computer Science."
+              status="completed"
+              score="93.4%"
             />
             <EducationItem
-              degree="Class X - 94.8%"
+              degree="Class X"
               school="Jai Academy Jhansi"
               period="Completed"
               details="Academic Excellence."
+              status="completed"
+              score="94.8%"
             />
             <EducationItem
               degree="Schooling"
               school="No. 1 Air Force School, Gwalior"
               period="Completed"
               details="Early education foundation."
+              status="completed"
             />
             <EducationItem
               degree="Schooling"
               school="Air Force School Viman Nagar, Pune"
               period="Completed"
               details="Early education foundation."
+              status="completed"
             />
           </div>
         </section>
 
         {/* Footer */}
+        {/* Footer */}
         <footer className="pt-20 pb-8 border-t border-dashed border-zinc-900 mt-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[10px] font-mono text-zinc-600">
-            <div className="flex flex-col gap-0.5">
-              <span>
-                Designed & Developed by <span className="text-zinc-300 font-semibold">Nayvedya Shrivastava</span>
-              </span>
-              <span>©2025. All rights reserved.</span>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 text-[10px] font-mono text-zinc-600">
+
+            <div className="flex flex-col gap-4 w-full md:w-auto">
+              <div className="flex flex-col gap-0.5">
+                <span>
+                  Designed & Developed by <span className="text-zinc-300 font-semibold">Nayvedya Shrivastava</span>
+                </span>
+                <span>©2025. All rights reserved.</span>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <span className="text-zinc-500 font-semibold uppercase tracking-wider text-[10px]">Other Links</span>
+                <div className="flex flex-wrap gap-2">
+                  <a href="https://instagram.com/letsjoyn" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 px-2 py-1 bg-zinc-900/50 hover:bg-zinc-800 rounded border border-zinc-800 hover:border-zinc-700 transition-colors text-zinc-400 hover:text-zinc-200">
+                    <Instagram className="w-3 h-3" /> Instagram
+                  </a>
+                  <a href="https://community.aws/@letsjoyn" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 px-2 py-1 bg-zinc-900/50 hover:bg-zinc-800 rounded border border-zinc-800 hover:border-zinc-700 transition-colors text-zinc-400 hover:text-zinc-200">
+                    <Cloud className="w-3 h-3" /> AWS
+                  </a>
+                  <a href="https://youtube.com/@letsjoyn" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 px-2 py-1 bg-zinc-900/50 hover:bg-zinc-800 rounded border border-zinc-800 hover:border-zinc-700 transition-colors text-zinc-400 hover:text-zinc-200">
+                    <Youtube className="w-3 h-3" /> YouTube
+                  </a>
+
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-col gap-0.5 text-right md:items-end w-full md:w-auto">
+            <div className="flex flex-col gap-0.5 text-left md:text-right w-full md:w-auto mt-4 md:mt-0">
               <span>Visitors <span className="text-zinc-400 font-bold">#4621</span></span>
               <span className="text-zinc-500">Delhi, {time}</span>
             </div>
@@ -287,33 +355,63 @@ const SectionHeader = ({ title }: { title: string }) => (
   </h2>
 );
 
-const SocialLinkInline = ({ href, label }: { href: string, label: string }) => (
-  <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 px-2 py-1 bg-zinc-800 text-zinc-100 text-xs rounded hover:bg-zinc-700 transition-colors mx-0.5">
+const SocialLinkInline = ({ href, label, icon }: { href: string, label: string, icon?: React.ReactNode }) => (
+  <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 px-2 py-1 bg-zinc-800 text-zinc-100 text-xs rounded hover:bg-zinc-700 transition-colors mx-0.5 align-middle">
+    {icon}
     {label}
   </a>
 )
 
-const SocialPill = ({ href, label, highlight }: { href: string; label: string, highlight?: boolean }) => (
+const SocialPill = ({ href, label, highlight, icon }: { href: string; label: string, highlight?: boolean, icon?: React.ReactNode }) => (
   <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
     className={cn(
-      "px-3 py-1.5 rounded text-xs font-medium transition-all duration-300 border",
+      "px-3 py-1.5 rounded text-xs font-medium transition-all duration-300 border flex items-center gap-1.5",
       highlight
         ? "bg-zinc-100 text-black border-zinc-100 hover:bg-zinc-300"
         : "bg-zinc-900 text-zinc-400 border-zinc-800 hover:text-zinc-200 hover:border-zinc-600 hover:bg-zinc-800"
     )}
   >
+    {icon}
     {label}
   </a>
 );
 
-const SocialIcon = ({ href, icon }: { href: string; icon: React.ReactNode }) => (
-  <a href={href} target="_blank" rel="noreferrer" className="p-2 bg-zinc-900 text-zinc-500 rounded-full hover:text-zinc-200 hover:bg-zinc-800 transition-colors">
-    {icon}
-  </a>
+const SocialIcon = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, { href?: string; icon: React.ReactNode; className?: string } & React.ButtonHTMLAttributes<HTMLButtonElement> & React.AnchorHTMLAttributes<HTMLAnchorElement>>(
+  ({ href, icon, className, ...props }, ref) => {
+    const baseStyles = cn(
+      "rounded-full transition-colors inline-block cursor-pointer flex items-center justify-center",
+      className || "p-2 bg-zinc-900 text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800"
+    );
+
+    if (href) {
+      return (
+        <a
+          ref={ref as React.Ref<HTMLAnchorElement>}
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          className={baseStyles}
+          {...props}
+        >
+          {icon}
+        </a>
+      )
+    }
+    return (
+      <button
+        ref={ref as React.Ref<HTMLButtonElement>}
+        className={baseStyles}
+        {...props}
+      >
+        {icon}
+      </button>
+    )
+  }
 )
+SocialIcon.displayName = "SocialIcon"
 
 const ExperienceItem = ({ role, company, period, description }: { role: string; company: string; period: string; description: string }) => (
   <div className="group">
@@ -326,14 +424,42 @@ const ExperienceItem = ({ role, company, period, description }: { role: string; 
   </div>
 );
 
-const EducationItem = ({ degree, school, period, details }: { degree: string; school: string; period: string; details: string }) => (
-  <div className="group">
-    <div className="flex justify-between items-baseline mb-0.5">
-      <h3 className="text-sm font-serif text-zinc-300 group-hover:text-zinc-100 transition-colors">{school}</h3>
-      <span className="text-[10px] text-zinc-600 font-mono">{period}</span>
+const EducationItem = ({ degree, school, period, details, status, score }: { degree: string; school: string; period: string; details: string; status?: 'completed' | 'in-progress'; score?: string }) => (
+  <div className="group relative transition-colors duration-300">
+    <div className="flex flex-col gap-1">
+      <div className="flex justify-between items-center">
+        <h3 className="text-base font-serif text-zinc-200 group-hover:text-zinc-50 transition-colors flex items-center gap-2">
+          {school}
+        </h3>
+        {status === 'in-progress' ? (
+          <div className="relative">
+            <span className="border border-yellow-500/20 bg-yellow-500/10 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-mono text-yellow-500/90 animate-pulse">
+              Expected 2028
+            </span>
+            <span className="absolute inset-0 border border-yellow-500/40 rounded animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] opacity-20"></span>
+          </div>
+        ) : status === 'completed' ? (
+          <span className="border border-green-500/20 bg-green-500/10 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-mono text-green-500/80">
+            Completed
+          </span>
+        ) : (
+          <span className="text-[10px] font-mono text-zinc-600 group-hover:text-zinc-500 transition-colors">{period}</span>
+        )}
+      </div>
+
+      <div className="flex items-center gap-2">
+        <span className="text-xs text-zinc-400">{degree}</span>
+        {score && (
+          <span className="inline-block bg-[#facc15] text-black text-[10px] font-bold px-1.5 py-0.5 -rotate-1 rounded-sm cursor-default hover:rotate-0 transition-transform duration-200">
+            {score}
+          </span>
+        )}
+      </div>
+
+      <p className="text-[10px] text-zinc-500 leading-relaxed max-w-xl group-hover:text-zinc-400 transition-colors">
+        {details}
+      </p>
     </div>
-    <div className="text-[11px] text-zinc-500 mb-1">{degree}</div>
-    <p className="text-[10px] text-zinc-600 max-w-xl">{details}</p>
   </div>
 );
 
