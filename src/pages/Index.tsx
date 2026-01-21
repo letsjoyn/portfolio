@@ -434,7 +434,7 @@ const EducationItem = ({ degree, school, period, details, status, score }: { deg
         {status === 'in-progress' ? (
           <div className="relative">
             <span className="border border-yellow-500/20 bg-yellow-500/10 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-mono text-yellow-500/90 animate-pulse">
-              Expected 2028
+              LOADING...
             </span>
             <span className="absolute inset-0 border border-yellow-500/40 rounded animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] opacity-20"></span>
           </div>
