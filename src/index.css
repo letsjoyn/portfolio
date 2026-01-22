@@ -267,7 +267,7 @@
 }
 
 .scrollbar-minimal::-webkit-scrollbar {
-  height: 2px;
+  height: 4px;
   /* Horizontal scrollbar height */
   width: 2px;
   /* Vertical scrollbar width */
@@ -349,6 +349,7 @@
   from {
     transform: translateX(-100%);
   }
+
   to {
     transform: translateX(100%);
   }

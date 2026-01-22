@@ -46,7 +46,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black relative overflow-visible font-sans text-zinc-300 selection:bg-neon-green/20 selection:text-neon-green">
+    <div className="min-h-screen bg-black relative overflow-x-hidden font-sans text-zinc-300 selection:bg-neon-green/20 selection:text-neon-green">
       {/* Background Glitch - Visible on Sides */}
       <div className="fixed inset-0 z-0">
         <LetterGlitch
@@ -59,16 +59,23 @@ const Index = () => {
       </div>
 
       {/* Main Content Container - Solid Black Box */}
-      <div className="relative z-10 max-w-3xl mx-auto min-h-screen bg-black border-x border-zinc-800 shadow-2xl px-6 md:px-10 py-6 flex flex-col gap-8">
+      <div className="relative z-10 max-w-3xl mx-auto min-h-screen bg-black border-x border-zinc-800 shadow-2xl px-6 md:px-10 pt-2 pb-6 flex flex-col gap-4">
 
-        <nav className="flex justify-center mb-6 mt-4 w-full z-50">
-          <div className="flex gap-2 overflow-x-auto scrollbar-minimal pb-2 max-w-full mx-4 sm:mx-0 whitespace-nowrap mask-gradient">
+        <nav className="flex items-center justify-between mb-2 mt-4 w-full z-50">
+          <div className="w-10 h-10 shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
+            <img
+              src="/lovable-uploads/a93029cc-2bbe-4a09-bb32-5c6bd97f5ab3.png"
+              alt="Nayvedya"
+              className="w-full h-full rounded-full object-cover border border-zinc-800 shadow-lg transition-all duration-500"
+            />
+          </div>
+          <div className="flex gap-1 overflow-x-auto scrollbar-minimal pb-2 flex-1 min-w-0 justify-start sm:justify-end whitespace-nowrap mask-gradient ml-4">
             {['About', 'Experience', 'Projects', 'Achievements', 'Volunteering', 'Education'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
                 className={cn(
-                  "px-4 py-2.5 md:px-4 md:py-2 rounded-md text-sm md:text-sm tracking-wider transition-all duration-300 shrink-0 border border-dashed",
+                  "px-2 py-1 md:px-2 md:py-1 rounded-md text-xs md:text-sm tracking-wider transition-all duration-300 shrink-0 border border-dashed",
                   activeSection === item.toLowerCase()
                     ? "border-zinc-500 text-white bg-zinc-900/50"
                     : "border-zinc-800 text-zinc-500 hover:text-zinc-300 hover:border-zinc-600 hover:bg-zinc-900/30"
@@ -83,18 +90,11 @@ const Index = () => {
         {/* Header / About Section */}
         <header id="about" className="flex flex-col gap-6 pt-2 scroll-mt-32">
           <div className="flex flex-col gap-3">
-            <div className="relative w-16 h-16 shrink-0">
-              <img
-                src="/lovable-uploads/a93029cc-2bbe-4a09-bb32-5c6bd97f5ab3.png"
-                alt="Nayvedya"
-                className="w-full h-full rounded-full object-cover border border-zinc-800 shadow-lg"
-              />
-            </div>
             <div>
-              <h1 className="text-3xl sm:text-4xl font-serif font-medium tracking-tight text-white mb-1.5">
+              <h1 className="text-3xl font-serif text-white mb-1 leading-none">
                 Hi, I'm Nayvedya Shrivastava
               </h1>
-              <p className="text-xs text-zinc-500 font-mono">
+              <p className="text-base text-zinc-400 font-urbanist">
                 frontend • backend • devops • competitive programmer
               </p>
             </div>
@@ -105,7 +105,7 @@ const Index = () => {
           </p>
 
           <div className="flex flex-col gap-3">
-            <p className="text-xs text-zinc-500">
+            <p className="text-sm text-zinc-500">
               Available for freelance or full-time roles. Slide into my <SocialLinkInline href="https://x.com/letsjoyn" label="DMs" icon={<Twitter className="w-3 h-3" />} /> or <SocialLinkInline href="mailto:joynnayvedya@gmail.com" label="Email" icon={<Mail className="w-3 h-3" />} /> me.
             </p>
 
@@ -114,8 +114,8 @@ const Index = () => {
               <SocialPill href="https://github.com/letsjoyn" label="GitHub" icon={<Github className="w-3.5 h-3.5" />} />
               <SocialPill href="https://www.linkedin.com/in/letsjoyn/" label="LinkedIn" icon={<Linkedin className="w-3.5 h-3.5" />} />
               <SocialPill href="/resume.pdf" label="Resume" highlight />
-              <span className="text-zinc-600 px-1 text-xs">?</span>
-              <span className="text-zinc-500 text-[10px] italic">Yep, they're all unlocked if you're curious.</span>
+              <span className="text-zinc-600 px-1 text-sm">?</span>
+              <span className="text-zinc-500 text-sm italic">Yep, they're all unlocked if you're curious.</span>
             </div>
 
             <div className="flex flex-wrap gap-2 mt-2 opacity-100">
@@ -123,12 +123,12 @@ const Index = () => {
                 <PopoverTrigger asChild>
                   <SocialIcon
                     icon={
-                      <div className="flex items-center gap-2.5">
-                        <CodeforcesBrandIcon className="w-5 h-5" />
-                        <span className="font-medium text-sm">Codeforces</span>
+                      <div className="flex items-center gap-1.5">
+                        <CodeforcesBrandIcon className="w-3.5 h-3.5" />
+                        <span className="font-medium text-xs">Codeforces</span>
                       </div>
                     }
-                    className="px-5 py-2.5 w-auto bg-[#1f2024] hover:bg-[#2d2e32] border border-transparent hover:border-blue-500/30 text-zinc-300 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-500/20"
+                    className="px-3 py-1.5 w-auto rounded bg-[#1f2024] hover:bg-[#2d2e32] border border-transparent hover:border-blue-500/30 text-zinc-300 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-500/20"
                   />
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0 border-none bg-transparent shadow-none" side="bottom" align="start" sideOffset={5} collisionPadding={10}>
@@ -140,12 +140,12 @@ const Index = () => {
                 <PopoverTrigger asChild>
                   <SocialIcon
                     icon={
-                      <div className="flex items-center gap-2.5">
-                        <LeetCodeBrandIcon className="w-5 h-5" />
-                        <span className="font-medium text-sm">LeetCode</span>
+                      <div className="flex items-center gap-1.5">
+                        <LeetCodeBrandIcon className="w-3.5 h-3.5" />
+                        <span className="font-medium text-xs">LeetCode</span>
                       </div>
                     }
-                    className="px-5 py-2.5 w-auto bg-[#1f2024] hover:bg-[#2d2e32] border border-transparent hover:border-orange-500/30 text-zinc-300 hover:text-white transition-all duration-300 shadow-lg hover:shadow-orange-500/20"
+                    className="px-3 py-1.5 w-auto rounded bg-[#1f2024] hover:bg-[#2d2e32] border border-transparent hover:border-orange-500/30 text-zinc-300 hover:text-white transition-all duration-300 shadow-lg hover:shadow-orange-500/20"
                   />
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0 border-none bg-transparent shadow-none" side="bottom" align="start" sideOffset={5} collisionPadding={10}>
@@ -157,154 +157,171 @@ const Index = () => {
         </header>
 
         {/* Experience Section */}
-        <section id="experience" className="flex flex-col gap-6 scroll-mt-32">
-          <SectionHeader title="Places I've Made an Impact" />
-          <div className="flex flex-col gap-8 pl-1">
-            <ExperienceItem
-              role="Founding Core Member"
-              company="AWS Cloud Club - MSRIT"
-              period="May 2024 – Present"
-              description="Building a technical community and organizing workshops for 200+ students in cloud computing. Leading initiatives to foster cloud literacy."
-            />
-            <ExperienceItem
-              role="Product Operations Intern"
-              company="Mera Mentor"
-              period="Oct 2023 – Mar 2024"
-              description="Managed product delivery workflows and collaborated with engineering teams for bug identification and UX refinement."
-            />
+        <section id="experience" className="flex flex-col gap-6 scroll-mt-32 mt-8">
+          <div className="bg-zinc-900/20 border border-zinc-800/50 rounded-sm p-6 flex flex-col gap-6">
+            <SectionHeader title="Places I've Made an Impact" />
+            <div className="flex flex-col gap-8 pl-1">
+              <ExperienceItem
+                role="Founding Core Member"
+                company="AWS Cloud Club - MSRIT"
+                period="May 2024 – Present"
+                description="Building a technical community and organizing workshops for 200+ students in cloud computing. Leading initiatives to foster cloud literacy."
+              />
+              <ExperienceItem
+                role="Product Operations Intern"
+                company="Mera Mentor"
+                period="Oct 2023 – Mar 2024"
+                description="Managed product delivery workflows and collaborated with engineering teams for bug identification and UX refinement."
+              />
+            </div>
           </div>
         </section>
 
         {/* Projects Section */}
         <section id="projects" className="flex flex-col gap-6 scroll-mt-32">
-          <SectionHeader title="Things I've Built" />
-          <div className="grid grid-cols-1 gap-6">
-            <ProjectCard
-              title="LinkedIn for Gamers"
-              tech="MERN Stack, Socket.io"
-              description="A specialized networking platform for esports professionals and recruitment."
-            />
-            <ProjectCard
-              title="Faculty Attendance Automation"
-              tech="Python, Selenium, OCR"
-              description="Automated solution digitizing physical attendance registers and streamlining data entry."
-            />
-            <ProjectCard
-              title="Book-Once"
-              tech="Full Stack Aggregator"
-              description="Comprehensive travel booking platform aggregating flights and hotels."
-            />
-          </div>
-        </section>
-
-        {/* Achievements Section */}
-        <section id="achievements" className="flex flex-col gap-6 scroll-mt-32">
-          <SectionHeader title="Achievements" />
-          <div className="flex flex-col gap-4 pl-1">
-            <AchievementItem
-              title="1st Place, AI Codefix 2025"
-              detail="Organized by Dept. of AIML, MSRIT."
-            />
-            <AchievementItem
-              title="1st Place, AI Hackathon"
-              detail="Won first prize at IISc Bangalore (May 2025)."
-            />
-            <AchievementItem
-              title="Top 25 Teams (Internal)"
-              detail="Selected internally at MSRIT for Smart India Hackathon 2025."
-            />
-            <AchievementItem
-              title="Finalist, Infotsav'25"
-              detail="Selected for Grand Finale at IIITM Gwalior."
-            />
-            <AchievementItem
-              title="Global Rank 1669"
-              detail="COMEDK 2025 (Top 1.5% of applicants)."
-            />
-          </div>
-        </section>
-
-        {/* Volunteering Section */}
-        <section id="volunteering" className="flex flex-col gap-6 scroll-mt-32">
-          <SectionHeader title="Volunteering" />
-          <div className="flex flex-col gap-8 pl-1">
-            <div className="group">
-              <div className="flex justify-between items-baseline mb-1">
-                <div className="flex items-center gap-2">
-                  <h3 className="text-lg font-serif text-zinc-200 group-hover:text-neon-green transition-colors">Core Member</h3>
-                </div>
-                <span className="text-[10px] text-zinc-500 font-mono">Mar 2025 - Present</span>
-              </div>
-              <div className="text-xs text-zinc-400 mb-2 font-medium flex items-center gap-2">
-                <Gamepad2 className="w-3 h-3" /> ClutchRIT Esports
-              </div>
-              <p className="text-xs text-zinc-500 leading-relaxed max-w-2xl">
-                Organized competitive gaming events for 500+ students, managed logistics, and handled public relations for the club.
-              </p>
-            </div>
-
-            <div className="group">
-              <div className="flex justify-between items-baseline mb-1">
-                <h3 className="text-lg font-serif text-zinc-200 group-hover:text-neon-green transition-colors">Video Editor</h3>
-                <span className="text-[10px] text-zinc-500 font-mono">Aug 2024 - Sep 2024</span>
-              </div>
-              <div className="text-xs text-zinc-400 mb-2 font-medium flex items-center gap-2">
-                <Video className="w-3 h-3" /> The LNM Institute of Information Technology
-              </div>
-              <p className="text-xs text-zinc-500 leading-relaxed max-w-2xl mb-2">
-                Learnt and applied content creation skills to produce videos for various organizations, including content that achieved viral reach.
-              </p>
-              <a href="https://www.linkedin.com/in/letsjoyn/details/volunteering-experiences/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-[10px] text-zinc-400 hover:text-white bg-zinc-900 border border-zinc-800 px-2 py-1 rounded transition-colors">
-                <Play className="w-2.5 h-2.5 fill-current" /> Watch Videos
-              </a>
+          <div className="bg-zinc-900/20 border border-zinc-800/50 rounded-sm p-6 flex flex-col gap-6">
+            <SectionHeader title="Things I've Built" />
+            <div className="grid grid-cols-1 gap-6">
+              <ProjectCard
+                title="LinkedIn for Gamers"
+                tech="MERN Stack, Socket.io"
+                description="A specialized networking platform for esports professionals and recruitment."
+              />
+              <ProjectCard
+                title="Faculty Attendance Automation"
+                tech="Python, Selenium, OCR"
+                description="Automated solution digitizing physical attendance registers and streamlining data entry."
+              />
+              <ProjectCard
+                title="Book-Once"
+                tech="Full Stack Aggregator"
+                description="Comprehensive travel booking platform aggregating flights and hotels."
+              />
             </div>
           </div>
         </section>
 
         {/* Education Section */}
         <section id="education" className="flex flex-col gap-6 scroll-mt-32">
-          <SectionHeader title="Education" />
-          <div className="flex flex-col gap-6 pl-1">
-            <EducationItem
-              degree="B.E. in Information Science and Engineering"
-              school="M.S. Ramaiah Institute of Technology"
-              period="Expected 2028"
-              details="Active member of technical societies. Secured 1st Place in AI Codefin 2024."
-              status="in-progress"
-              score="9.47 CGPA (till 2nd sem)"
-            />
-            <EducationItem
-              degree="Class XII (PCM)"
-              school="Mahatma Hansraj Modern School"
-              period="Completed"
-              details="Strong foundation in Mathematics and Computer Science."
-              status="completed"
-              score="93.4%"
-            />
-            <EducationItem
-              degree="Class X"
-              school="Jai Academy Jhansi"
-              period="Completed"
-              details="Academic Excellence."
-              status="completed"
-              score="94.8%"
-            />
-            <EducationItem
-              degree="Schooling"
-              school="No. 1 Air Force School, Gwalior"
-              period="Completed"
-              details="Early education foundation."
-              status="completed"
-            />
-            <EducationItem
-              degree="Schooling"
-              school="Air Force School Viman Nagar, Pune"
-              period="Completed"
-              details="Early education foundation."
-              status="completed"
-            />
+          <div className="bg-zinc-900/20 border border-zinc-800/50 rounded-sm p-6 flex flex-col gap-6">
+            <SectionHeader title="Education" />
+            <div className="flex flex-col gap-6 pl-1">
+              <EducationItem
+                degree="B.E. in Information Science and Engineering"
+                school="M.S. Ramaiah Institute of Technology"
+                period="Expected 2028"
+                details="Active member of technical societies. Secured 1st Place in AI Codefin 2024."
+                status="in-progress"
+                score="9.47 CGPA (till 2nd sem)"
+              />
+              <EducationItem
+                degree="Class XII (PCM)"
+                school="Mahatma Hansraj Modern School"
+                period="Completed"
+                details="Strong foundation in Mathematics and Computer Science."
+                status="completed"
+                score="93.4%"
+              />
+              <EducationItem
+                degree="Class X"
+                school="Jai Academy Jhansi"
+                period="Completed"
+                details="Academic Excellence."
+                status="completed"
+                score="94.8%"
+              />
+              <EducationItem
+                degree="Schooling"
+                school="No. 1 Air Force School, Gwalior"
+                period="Completed"
+                details="Early education foundation."
+                status="completed"
+              />
+              <EducationItem
+                degree="Schooling"
+                school="Air Force School Viman Nagar, Pune"
+                period="Completed"
+                details="Early education foundation."
+                status="completed"
+              />
+            </div>
           </div>
         </section>
+
+        {/* Achievements Section */}
+        <section id="achievements" className="flex flex-col gap-6 scroll-mt-32">
+          <div className="bg-zinc-900/20 border border-zinc-800/50 rounded-sm p-6 flex flex-col gap-6">
+            <SectionHeader title="Achievements" />
+            <div className="grid grid-cols-2 gap-3">
+              <AchievementTile
+                title="AI Codefix 2025"
+                detail="1st Place - Dept. of AIML, MSRIT"
+                images={["/lovable-uploads/ai-codefix.jpg", "/lovable-uploads/ai-codefix-2.jpg"]}
+                className="col-span-2 sm:col-span-1"
+              />
+              <AchievementTile
+                title="AI Hackathon"
+                detail="1st Place - IISc Bangalore"
+                bgImage="/lovable-uploads/iisc-hackathon.jpg"
+                className="col-span-2 sm:col-span-1"
+              />
+              <AchievementTile
+                title="Top 25 Teams"
+                detail="Smart India Hackathon (Internal)"
+                videoSrc="https://www.youtube.com/embed/arliHSiZf7c?autoplay=1&mute=1&controls=0&loop=1&playlist=arliHSiZf7c&playsinline=1&rel=0"
+                href="https://www.youtube.com/watch?v=arliHSiZf7c"
+                badge="Click for Demo"
+              />
+              <AchievementTile
+                title="Finalist, Infotsav"
+                detail="Grand Finale at IIITM Gwalior"
+                bgImage="/lovable-uploads/infotsav-mail.jpg"
+              />
+
+            </div>
+          </div>
+        </section>
+
+        {/* Volunteering Section */}
+        <section id="volunteering" className="flex flex-col gap-6 scroll-mt-32">
+          <div className="bg-zinc-900/20 border border-zinc-800/50 rounded-sm p-6 flex flex-col gap-6">
+            <SectionHeader title="Volunteering" />
+            <div className="flex flex-col gap-8 pl-1">
+              <div className="group">
+                <div className="flex justify-between items-baseline mb-1">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-lg font-serif text-zinc-200 group-hover:text-neon-green transition-colors">Core Member</h3>
+                  </div>
+                  <span className="text-[10px] text-zinc-500 font-mono">Mar 2025 - Present</span>
+                </div>
+                <div className="text-xs text-zinc-400 mb-2 font-medium flex items-center gap-2">
+                  <Gamepad2 className="w-3 h-3" /> ClutchRIT Esports
+                </div>
+                <p className="text-xs text-zinc-500 leading-relaxed max-w-2xl">
+                  Organized competitive gaming events for 500+ students, managed logistics, and handled public relations for the club.
+                </p>
+              </div>
+
+              <div className="group">
+                <div className="flex justify-between items-baseline mb-1">
+                  <h3 className="text-lg font-serif text-zinc-200 group-hover:text-neon-green transition-colors">Video Editor</h3>
+                  <span className="text-[10px] text-zinc-500 font-mono">Aug 2024 - Sep 2024</span>
+                </div>
+                <div className="text-xs text-zinc-400 mb-2 font-medium flex items-center gap-2">
+                  <Video className="w-3 h-3" /> The LNM Institute of Information Technology
+                </div>
+                <p className="text-xs text-zinc-500 leading-relaxed max-w-2xl mb-2">
+                  Learnt and applied content creation skills to produce videos for various organizations, including content that achieved viral reach.
+                </p>
+                <a href="https://www.linkedin.com/in/letsjoyn/details/volunteering-experiences/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-[10px] text-zinc-400 hover:text-white bg-zinc-900 border border-zinc-800 px-2 py-1 rounded transition-colors">
+                  <Play className="w-2.5 h-2.5 fill-current" /> Watch Videos
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
 
         {/* Footer */}
         {/* Footer */}
@@ -350,7 +367,7 @@ const Index = () => {
 // Sub-components
 
 const SectionHeader = ({ title }: { title: string }) => (
-  <h2 className="text-sm font-serif text-zinc-100 border-dashed border border-zinc-700/50 px-3 py-1.5 inline-block rounded-sm self-start bg-zinc-900/30 mb-2">
+  <h2 className="text-sm font-serif text-zinc-100 border-dashed border border-zinc-700/50 px-3 py-1.5 inline-block rounded-sm self-start bg-zinc-800/60 mb-2">
     {title}
   </h2>
 );
@@ -420,7 +437,7 @@ const ExperienceItem = ({ role, company, period, description }: { role: string; 
       <span className="text-[10px] text-zinc-500 font-mono">{period}</span>
     </div>
     <div className="text-xs text-zinc-400 mb-2 font-medium">{role}</div>
-    <p className="text-xs text-zinc-500 leading-relaxed max-w-2xl">{description}</p>
+    <p className="text-sm text-zinc-500 leading-relaxed max-w-2xl font-urbanist">{description}</p>
   </div>
 );
 
@@ -456,7 +473,7 @@ const EducationItem = ({ degree, school, period, details, status, score }: { deg
         )}
       </div>
 
-      <p className="text-[10px] text-zinc-500 leading-relaxed max-w-xl group-hover:text-zinc-400 transition-colors">
+      <p className="text-sm text-zinc-500 leading-relaxed max-w-xl group-hover:text-zinc-400 transition-colors font-urbanist">
         {details}
       </p>
     </div>
@@ -476,15 +493,68 @@ const ProjectCard = ({ title, tech, description }: { title: string; tech: string
         </span>
       ))}
     </div>
-    <p className="text-xs text-zinc-500 leading-relaxed max-w-xl">{description}</p>
+    <p className="text-sm text-zinc-500 leading-relaxed max-w-xl font-urbanist">{description}</p>
   </div>
 );
 
-const AchievementItem = ({ title, detail }: { title: string; detail: string }) => (
-  <div className="group flex flex-col gap-1 mb-2">
-    <h3 className="text-base font-serif text-zinc-200 group-hover:text-neon-green transition-colors">{title}</h3>
-    <p className="text-xs text-zinc-500 font-urbanist leading-relaxed">{detail}</p>
-  </div>
-);
+const AchievementTile = ({ title, detail, bgImage, videoSrc, images, gradient, className, href, badge }: { title: string; detail: string; bgImage?: string; videoSrc?: string; images?: string[]; gradient?: string; className?: string; href?: string; badge?: string }) => {
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+  const displayImages = images || (bgImage ? [bgImage] : []);
+  const Wrapper = href ? 'a' : 'div';
+
+  React.useEffect(() => {
+    if (displayImages.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % displayImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [displayImages.length]);
+
+  return (
+    <Wrapper
+      href={href}
+      target={href ? "_blank" : undefined}
+      rel={href ? "noreferrer" : undefined}
+      className={cn(
+        "group relative h-40 rounded-sm overflow-hidden bg-zinc-900/50 border border-zinc-800/50 transition-all duration-300 hover:border-zinc-700 block",
+        gradient ? `bg-gradient-to-br ${gradient}` : "",
+        className
+      )}
+    >
+      {videoSrc ? (
+        <div className="absolute inset-0 w-full h-full pointer-events-none opacity-60 group-hover:opacity-40 transition-opacity duration-300">
+          <iframe
+            src={videoSrc}
+            className="w-full h-full object-cover scale-[1.35]" // Scaling slightly to cover letterboxing if any
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            tabIndex={-1}
+          />
+        </div>
+      ) : (
+        displayImages.map((img, index) => (
+          <img
+            key={img}
+            src={img}
+            alt={title}
+            className={cn(
+              "absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-110",
+              index === currentImageIndex ? "opacity-60 group-hover:opacity-40" : "opacity-0"
+            )}
+          />
+        ))
+      )}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+      {badge && (
+        <div className="absolute top-2 right-2 bg-yellow-400 text-black text-[10px] font-bold px-2 py-0.5 -rotate-2 rounded-sm shadow-md z-10 border border-yellow-600/20 shadow-black/20">
+          {badge}
+        </div>
+      )}
+      <div className="absolute bottom-0 left-0 right-0 p-4">
+        <h3 className="text-sm font-bold text-white mb-0.5 leading-tight group-hover:text-neon-green transition-colors">{title}</h3>
+        <p className="text-[10px] text-zinc-400 font-urbanist leading-tight line-clamp-2">{detail}</p>
+      </div>
+    </Wrapper>
+  );
+};
 
 export default Index;
