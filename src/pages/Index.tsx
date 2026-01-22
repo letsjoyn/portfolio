@@ -158,7 +158,7 @@ const Index = () => {
 
         {/* Experience Section */}
         <section id="experience" className="flex flex-col gap-6 scroll-mt-32 mt-8">
-          <div className="bg-zinc-900/20 border border-zinc-800/50 rounded-sm p-6 flex flex-col gap-6">
+          <div className="bg-zinc-900/20 border border-dashed border-zinc-800 rounded-sm p-6 flex flex-col gap-6">
             <SectionHeader title="Places I've Made an Impact" />
             <div className="flex flex-col gap-8 pl-1">
               <ExperienceItem
@@ -179,7 +179,7 @@ const Index = () => {
 
         {/* Projects Section */}
         <section id="projects" className="flex flex-col gap-6 scroll-mt-32">
-          <div className="bg-zinc-900/20 border border-zinc-800/50 rounded-sm p-6 flex flex-col gap-6">
+          <div className="bg-zinc-900/20 border border-dashed border-zinc-800 rounded-sm p-6 flex flex-col gap-6">
             <SectionHeader title="Things I've Built" />
             <div className="grid grid-cols-1 gap-6">
               <ProjectCard
@@ -203,7 +203,7 @@ const Index = () => {
 
         {/* Education Section */}
         <section id="education" className="flex flex-col gap-6 scroll-mt-32">
-          <div className="bg-zinc-900/20 border border-zinc-800/50 rounded-sm p-6 flex flex-col gap-6">
+          <div className="bg-zinc-900/20 border border-dashed border-zinc-800 rounded-sm p-6 flex flex-col gap-6">
             <SectionHeader title="Education" />
             <div className="flex flex-col gap-6 pl-1">
               <EducationItem
@@ -250,7 +250,7 @@ const Index = () => {
 
         {/* Achievements Section */}
         <section id="achievements" className="flex flex-col gap-6 scroll-mt-32">
-          <div className="bg-zinc-900/20 border border-zinc-800/50 rounded-sm p-6 flex flex-col gap-6">
+          <div className="bg-zinc-900/20 border border-dashed border-zinc-800 rounded-sm p-6 flex flex-col gap-6">
             <SectionHeader title="Achievements" />
             <div className="grid grid-cols-2 gap-3">
               <AchievementTile
@@ -284,7 +284,7 @@ const Index = () => {
 
         {/* Volunteering Section */}
         <section id="volunteering" className="flex flex-col gap-6 scroll-mt-32">
-          <div className="bg-zinc-900/20 border border-zinc-800/50 rounded-sm p-6 flex flex-col gap-6">
+          <div className="bg-zinc-900/20 border border-dashed border-zinc-800 rounded-sm p-6 flex flex-col gap-6">
             <SectionHeader title="Volunteering" />
             <div className="flex flex-col gap-8 pl-1">
               <div className="group">
