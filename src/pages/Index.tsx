@@ -227,8 +227,14 @@ const Index = () => {
                 detail="Finalist — Top 2.5% of 31,000+ registrations · Grand Finale, SST Bangalore"
                 gradient="from-violet-900/70 via-blue-900/50 to-black"
                 badge="Apr 2026"
-                className="col-span-2"
                 href="https://github.com/letsjoyn/meta-scalar-hack"
+              />
+              <AchievementTile
+                title="Top 25 Teams"
+                detail="Smart India Hackathon (Internal) 2025 · MSRIT"
+                videoSrc="https://www.youtube.com/embed/arliHSiZf7c?autoplay=1&mute=1&controls=0&loop=1&playlist=arliHSiZf7c&playsinline=1&rel=0"
+                href="https://www.youtube.com/watch?v=arliHSiZf7c"
+                badge="Watch Demo"
               />
               <AchievementTile
                 title="AI Codefix 2025"
@@ -250,14 +256,6 @@ const Index = () => {
                 title="Finalist, Infotsav'25"
                 detail="Grand Finale at IIITM Gwalior"
                 bgImage="/lovable-uploads/infotsav-mail.jpg"
-              />
-              <AchievementTile
-                title="Top 25 Teams"
-                detail="Smart India Hackathon (Internal) 2025 · MSRIT"
-                videoSrc="https://www.youtube.com/embed/arliHSiZf7c?autoplay=1&mute=1&controls=0&loop=1&playlist=arliHSiZf7c&playsinline=1&rel=0"
-                href="https://www.youtube.com/watch?v=arliHSiZf7c"
-                badge="Watch Demo"
-                className="col-span-2"
               />
             </div>
           </div>
