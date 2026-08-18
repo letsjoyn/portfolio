@@ -439,17 +439,17 @@ const ExperienceItem = ({ role, company, period, description, highlight, href }:
 const EducationItem = ({ degree, school, period, details, score }: { degree: string; school: string; period: string; details: string; score?: string }) => (
   <div className="group relative transition-colors duration-300">
     <div className="flex flex-col gap-1">
-      <div className="flex justify-between items-center">
-        <h3 className="text-base font-serif text-zinc-200 group-hover:text-zinc-50 transition-colors flex items-center gap-2">
+      <div className="flex justify-between items-start gap-4">
+        <h3 className="text-base font-serif text-zinc-200 group-hover:text-zinc-50 transition-colors">
           {school}
         </h3>
-        <span className="text-[10px] font-mono text-zinc-600 group-hover:text-zinc-500 transition-colors">{period}</span>
+        <span className="text-[10px] font-mono text-zinc-600 group-hover:text-zinc-500 transition-colors shrink-0 mt-1">{period}</span>
       </div>
 
-      <div className="flex items-center gap-2">
-        <span className="text-xs text-zinc-400">{degree}</span>
+      <div className="text-xs text-zinc-400 leading-relaxed">
+        {degree}
         {score && (
-          <span className="text-xs text-zinc-300">| {score}</span>
+          <span className="text-zinc-300 font-medium whitespace-nowrap ml-1.5">| {score}</span>
         )}
       </div>
 
