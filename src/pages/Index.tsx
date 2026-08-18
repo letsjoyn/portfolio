@@ -129,6 +129,7 @@ const Index = () => {
                 company="AWS Cloud Club – MSRIT"
                 period="May 2025 – Present"
                 description="Spearheaded community growth; delivered technical presentations on cloud infrastructure and AWS architecture (S3/EC2, shared responsibility model) to 500+ students across workshops and events."
+                href="https://www.credly.com/badges/6d1a0241-aeab-4138-a72a-bf2ab89ad08b"
               />
               <ExperienceItem
                 role="Product Operations Intern"
@@ -415,7 +416,11 @@ const ExperienceItem = ({ role, company, period, description, highlight, href }:
       {href ? (
         <a href={href} target="_blank" rel="noreferrer" className={cn("text-base font-serif transition-colors duration-300 inline-flex items-center gap-1.5", highlight ? "text-zinc-100 hover:text-white" : "text-zinc-200 group-hover:text-neon-green")}>
           {company}
-          <Github className="w-3 h-3 text-zinc-500 group-hover:text-zinc-300 transition-colors" />
+          {href.includes('github.com') ? (
+            <Github className="w-3 h-3 text-zinc-500 group-hover:text-zinc-300 transition-colors" />
+          ) : (
+            <ExternalLink className="w-3 h-3 text-zinc-500 group-hover:text-zinc-300 transition-colors" />
+          )}
         </a>
       ) : (
         <h3 className={cn("text-base font-serif transition-colors duration-300", highlight ? "text-zinc-100 group-hover:text-white" : "text-zinc-200 group-hover:text-neon-green")}>{company}</h3>
