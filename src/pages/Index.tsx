@@ -147,6 +147,13 @@ const Index = () => {
             <SectionHeader title="Things I've Built" />
             <div className="grid grid-cols-1 gap-6">
               <ProjectCard
+                title="CMHub — Campus Mobility Hub"
+                tech="Next.js, Node.js, Express, MongoDB, JWT, OAuth"
+                description="Production campus super-app unifying 7 modules (carpool, rentals, marketplace, food delivery, gigs, live radar, social feed) on a single verified platform. Built end-to-end auth with JWT, Google OAuth 2.0, and OTP email verification (Resend API, DKIM/SPF/DMARC); implemented an admin approval pipeline requiring ID-card review before granting platform access."
+                liveHref="https://cmhub.in"
+                badge="Live"
+              />
+              <ProjectCard
                 title="Disaster Response OpenEnv"
                 tech="HuggingFace, Python, Docker, LLM Agents"
                 description="Emergency triage simulator for the Meta PyTorch OpenEnv Hackathon. Hybrid agent with a heuristic router and Qwen 72B achieving 92% routing accuracy across 15 disaster scenarios. Deployed on HuggingFace Spaces with a live tactical dashboard."
@@ -460,12 +467,17 @@ const EducationItem = ({ degree, school, period, details, score }: { degree: str
   </div>
 );
 
-const ProjectCard = ({ title, tech, description, href, badge }: { title: string; tech: string; description: string; href?: string; badge?: string }) => (
+const ProjectCard = ({ title, tech, description, href, liveHref, badge }: { title: string; tech: string; description: string; href?: string; liveHref?: string; badge?: string }) => (
   <div className="group">
     <div className="flex justify-between items-start mb-1">
       <h3 className="text-base font-serif text-zinc-200 group-hover:underline decoration-zinc-700 underline-offset-4 decoration-1">{title}</h3>
       <div className="flex items-center gap-2 shrink-0 ml-2">
         {badge && <span className="text-[9px] text-zinc-600 font-mono bg-zinc-900/60 border border-zinc-800/50 px-1.5 py-0.5 rounded">{badge}</span>}
+        {liveHref && (
+          <a href={liveHref} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-zinc-200 transition-colors" onClick={e => e.stopPropagation()}>
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
+        )}
         {href && (
           <a href={href} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-zinc-200 transition-colors" onClick={e => e.stopPropagation()}>
             <Github className="w-3.5 h-3.5" />
