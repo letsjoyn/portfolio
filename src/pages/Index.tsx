@@ -154,6 +154,12 @@ const Index = () => {
                 badge="Live"
               />
               <ProjectCard
+                title="AlgoArena — Real-Time 1v1 Competitive Coding"
+                tech="React 19, Vite, Node.js, Express 5, Socket.io, PostgreSQL, Redis, BullMQ, Docker, Monaco Editor"
+                description="Chess.com meets LeetCode — skill-based Elo matchmaking for real-time 1v1 DSA duels. Submissions run in isolated Docker containers (256MB RAM, --network none) with live verdict streaming over WebSockets. Features Monaco Editor, opponent telemetry, custom battle rooms, and support for JS, Python, C++, and Java."
+                href="https://github.com/ayushoncode/AlgoArena"
+              />
+              <ProjectCard
                 title="Disaster Response OpenEnv"
                 tech="HuggingFace, Python, Docker, LLM Agents"
                 description="Emergency triage simulator for the Meta PyTorch OpenEnv Hackathon. Hybrid agent with a heuristic router and Qwen 72B achieving 92% routing accuracy across 15 disaster scenarios. Deployed on HuggingFace Spaces with a live tactical dashboard."
