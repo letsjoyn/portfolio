@@ -147,6 +147,12 @@ const Index = () => {
             <SectionHeader title="Things I've Built" />
             <div className="grid grid-cols-1 gap-6">
               <ProjectCard
+                title="Codebook"
+                tech="HTML, CSS, JavaScript, Firebase, Monaco Editor"
+                description="A single-page application for tracking and organizing coding problems. Features an aesthetic calendar/time tracker, Firebase cloud synchronization, and an integrated Monaco Editor with multi-language support."
+                href="https://github.com/letsjoyn/codebook"
+              />
+              <ProjectCard
                 title="CMHub — Campus Mobility Hub"
                 tech="Next.js, Node.js, Express, MongoDB, JWT, OAuth"
                 description="Production campus super-app unifying 7 modules (carpool, rentals, marketplace, food delivery, gigs, live radar, social feed) on a single verified platform. Built end-to-end auth with JWT, Google OAuth 2.0, and OTP email verification (Resend API, DKIM/SPF/DMARC); implemented an admin approval pipeline requiring ID-card review before granting platform access."
