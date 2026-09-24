@@ -151,6 +151,8 @@ const Index = () => {
                 tech="HTML, CSS, JavaScript, Firebase, Monaco Editor"
                 description="A single-page application for tracking and organizing coding problems. Features an aesthetic calendar/time tracker, Firebase cloud synchronization, and an integrated Monaco Editor with multi-language support."
                 href="https://github.com/letsjoyn/codebook"
+                liveHref="https://mycodebook.vercel.app/"
+                badge="Live"
               />
               <ProjectCard
                 title="CMHub — Campus Mobility Hub"
