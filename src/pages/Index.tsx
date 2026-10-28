@@ -86,7 +86,7 @@ const PROJECTS_DATA: Project[] = [
     categoryLabel: "Full-Stack & Web",
     tech: ["HTML5", "CSS3", "JavaScript", "Firebase", "Monaco Editor"],
     description: "A single-page application for tracking and organizing coding problems. Features an aesthetic calendar/time tracker, Firebase cloud synchronization, and an integrated Monaco Editor with multi-language code playground.",
-    href: "https://github.com/letsjoyn/codebook" ,
+    href: "https://github.com/letsjoyn/codebook",
     liveHref: "https://mycodebook.vercel.app/",
     badge: "Live App",
   },
@@ -213,7 +213,7 @@ const Index = () => {
     : PROJECTS_DATA.filter(p => p.category === projectCategory);
 
   return (
-    <div className="min-h-screen bg-[#070709] text-zinc-300 font-sans selection:bg-cyan-500/20 selection:text-cyan-200 relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#070709] text-zinc-300 font-sans selection:bg-amber-500/20 selection:text-amber-200 relative overflow-x-hidden">
       
       {/* ALWAYS VISIBLE FLOATING TOP NAVBAR */}
       <header className="fixed top-3 left-0 right-0 z-50 flex justify-center px-3 sm:px-4 pointer-events-none">
@@ -232,7 +232,7 @@ const Index = () => {
             <div className="hidden sm:flex flex-col">
               <span className="text-xs font-serif text-white tracking-wide leading-none">Nayvedya</span>
               <span className="text-[10px] text-zinc-500 font-mono flex items-center gap-1 mt-0.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_6px_rgba(34,211,238,0.6)]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_6px_rgba(251,191,36,0.6)]" />
                 online
               </span>
             </div>
@@ -273,7 +273,7 @@ const Index = () => {
           {/* Top Meta info */}
           <div className="flex items-center justify-end">
             <div className="flex items-center gap-1.5 text-xs font-mono text-zinc-500">
-              <MapPin className="w-3.5 h-3.5 text-cyan-400" />
+              <MapPin className="w-3.5 h-3.5 text-amber-400" />
               <span>Bengaluru, India</span>
               <span className="text-zinc-700">•</span>
               <Clock className="w-3.5 h-3.5 text-zinc-500" />
@@ -296,8 +296,8 @@ const Index = () => {
             19 y/o builder from India based in Bengaluru. I craft software that <span className="font-serif italic text-white text-xl">works good</span> and <span className="font-serif italic text-white text-xl">looks good</span> — combining high-performance systems engineering with modern, editorial design.
           </p>
 
-          {/* Primary Action Buttons */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
+          {/* Consolidated Action Links (All 8 links organized in Hero) */}
+          <div className="flex flex-col gap-3 pt-1">
             <div className="flex flex-wrap items-center gap-2">
               <a
                 href="/resume.pdf"
@@ -314,9 +314,9 @@ const Index = () => {
                 href="https://github.com/letsjoyn"
                 target="_blank"
                 rel="noreferrer"
-                className="px-3.5 py-2 rounded-lg text-xs font-mono bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition-colors flex items-center gap-2"
+                className="px-3 py-2 rounded-lg text-xs font-mono bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition-colors flex items-center gap-2"
               >
-                <Github className="w-3.5 h-3.5" />
+                <Github className="w-3.5 h-3.5 text-zinc-400" />
                 GitHub
               </a>
 
@@ -324,9 +324,9 @@ const Index = () => {
                 href="https://www.linkedin.com/in/letsjoyn/"
                 target="_blank"
                 rel="noreferrer"
-                className="px-3.5 py-2 rounded-lg text-xs font-mono bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition-colors flex items-center gap-2"
+                className="px-3 py-2 rounded-lg text-xs font-mono bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition-colors flex items-center gap-2"
               >
-                <Linkedin className="w-3.5 h-3.5" />
+                <Linkedin className="w-3.5 h-3.5 text-zinc-400" />
                 LinkedIn
               </a>
 
@@ -334,17 +334,47 @@ const Index = () => {
                 href="https://x.com/letsjoyn"
                 target="_blank"
                 rel="noreferrer"
-                className="px-3.5 py-2 rounded-lg text-xs font-mono bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition-colors flex items-center gap-2"
+                className="px-3 py-2 rounded-lg text-xs font-mono bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition-colors flex items-center gap-2"
               >
-                <Twitter className="w-3.5 h-3.5" />
+                <Twitter className="w-3.5 h-3.5 text-zinc-400" />
                 Twitter
               </a>
 
               <a
-                href="mailto:joynnayvedya@gmail.com"
-                className="px-3.5 py-2 rounded-lg text-xs font-mono bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition-colors flex items-center gap-2"
+                href="https://instagram.com/letsjoyn"
+                target="_blank"
+                rel="noreferrer"
+                className="px-3 py-2 rounded-lg text-xs font-mono bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition-colors flex items-center gap-2"
               >
-                <Mail className="w-3.5 h-3.5" />
+                <Instagram className="w-3.5 h-3.5 text-zinc-400" />
+                Instagram
+              </a>
+
+              <a
+                href="https://community.aws/@letsjoyn"
+                target="_blank"
+                rel="noreferrer"
+                className="px-3 py-2 rounded-lg text-xs font-mono bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition-colors flex items-center gap-2"
+              >
+                <Cloud className="w-3.5 h-3.5 text-zinc-400" />
+                AWS
+              </a>
+
+              <a
+                href="https://youtube.com/@letsjoyn"
+                target="_blank"
+                rel="noreferrer"
+                className="px-3 py-2 rounded-lg text-xs font-mono bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition-colors flex items-center gap-2"
+              >
+                <Youtube className="w-3.5 h-3.5 text-zinc-400" />
+                YouTube
+              </a>
+
+              <a
+                href="mailto:joynnayvedya@gmail.com"
+                className="px-3 py-2 rounded-lg text-xs font-mono bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition-colors flex items-center gap-2"
+              >
+                <Mail className="w-3.5 h-3.5 text-zinc-400" />
                 Email
               </a>
             </div>
@@ -481,12 +511,12 @@ const Index = () => {
           <SectionHeader title="Technical Arsenal" count="Core Stack" />
           <div className="bg-zinc-900/30 border border-zinc-800 rounded-xl p-5 flex flex-col gap-4">
             <SkillRow 
-              icon={<Code2 className="w-3.5 h-3.5 text-cyan-400" />}
+              icon={<Code2 className="w-3.5 h-3.5 text-amber-400" />}
               label="Languages" 
               skills={["C++ (DSA & Low-Level)", "Python", "TypeScript", "JavaScript", "Java", "SQL"]} 
             />
             <SkillRow 
-              icon={<Cpu className="w-3.5 h-3.5 text-violet-400" />}
+              icon={<Cpu className="w-3.5 h-3.5 text-amber-400" />}
               label="AI / ML & Vision" 
               skills={["PyTorch", "HuggingFace", "RAG Systems", "Google Earth Engine (GEE)", "XGBoost", "Extra Trees", "Scikit-Learn"]} 
             />
@@ -496,7 +526,7 @@ const Index = () => {
               skills={["Node.js / Express", "FastAPI", "Docker Sandboxes", "Redis", "BullMQ Queues", "Socket.io", "PostgreSQL", "MongoDB", "Named Pipes"]} 
             />
             <SkillRow 
-              icon={<Layers className="w-3.5 h-3.5 text-sky-400" />}
+              icon={<Layers className="w-3.5 h-3.5 text-amber-400" />}
               label="Web & Cloud" 
               skills={["Next.js 15", "React 19", "Supabase", "MapLibre GL", "Tailwind CSS", "AWS (S3 / EC2)", "Firebase", "Monaco Editor", "REST APIs"]} 
             />
@@ -554,7 +584,7 @@ const Index = () => {
                   <h3 className="text-lg font-serif text-white">Core Member</h3>
                   <span className="text-[10px] font-mono text-zinc-500">2025 – 2026</span>
                 </div>
-                <div className="text-xs text-cyan-400 font-mono flex items-center gap-1.5">
+                <div className="text-xs text-amber-400 font-mono flex items-center gap-1.5">
                   <Gamepad2 className="w-3.5 h-3.5" />
                   ClutchRIT Esports, MSRIT
                 </div>
@@ -602,42 +632,11 @@ const Index = () => {
                 Designed & built with precision • © {new Date().getFullYear()}
               </p>
             </div>
-
-            {/* Other Channels */}
-            <div className="flex items-center gap-2">
-              <a 
-                href="https://instagram.com/letsjoyn" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all"
-                title="Instagram"
-              >
-                <Instagram className="w-3.5 h-3.5" />
-              </a>
-              <a 
-                href="https://community.aws/@letsjoyn" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all"
-                title="AWS Community"
-              >
-                <Cloud className="w-3.5 h-3.5" />
-              </a>
-              <a 
-                href="https://youtube.com/@letsjoyn" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all"
-                title="YouTube"
-              >
-                <Youtube className="w-3.5 h-3.5" />
-              </a>
-            </div>
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-2 pt-4 border-t border-zinc-900 text-[11px] font-mono text-zinc-500">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_6px_rgba(34,211,238,0.6)]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_6px_rgba(251,191,36,0.6)]" />
               <span>
                 Visitor Counter: <span className="text-zinc-200 font-bold">{visitorCount ? `#${visitorCount.toLocaleString()}` : '#4,621'}</span>
               </span>
@@ -698,8 +697,8 @@ const ExperienceItem = ({
     </div>
 
     <div className="text-xs text-zinc-400 mb-3 font-medium flex items-center gap-2">
-      {highlight && <span className="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_6px_rgba(34,211,238,0.5)]" />}
-      <span className="text-cyan-300 font-mono">{role}</span>
+      {highlight && <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_6px_rgba(251,191,36,0.5)]" />}
+      <span className="text-amber-300 font-mono">{role}</span>
     </div>
 
     <p className="text-sm text-zinc-400 leading-relaxed font-urbanist mb-3">{description}</p>
@@ -733,12 +732,13 @@ const ProjectCard = ({
       : "bg-zinc-900/20 hover:bg-zinc-900/40 border-zinc-800 hover:border-zinc-700"
   )}>
     <div>
-      <div className="flex justify-between items-start gap-3 mb-2">
+      {/* Mobile-safe Header: stacks title and actions cleanly on phones, side-by-side on desktop */}
+      <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2.5 mb-2.5">
         <h3 className="text-xl sm:text-2xl font-serif text-white group-hover:text-zinc-100 transition-colors">
           {title}
         </h3>
 
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex flex-wrap items-center gap-2 shrink-0">
           <span className="text-[10px] font-mono text-zinc-400 bg-zinc-900 border border-zinc-800 px-2.5 py-0.5 rounded-full">
             {categoryLabel}
           </span>
@@ -746,34 +746,36 @@ const ProjectCard = ({
             <span className={cn(
               "text-[10px] font-mono px-2.5 py-0.5 rounded-full border",
               highlight 
-                ? "text-cyan-300 bg-cyan-500/10 border-cyan-500/20" 
-                : "text-zinc-300 bg-zinc-900 border-zinc-750"
+                ? "text-amber-300 bg-amber-500/10 border-amber-500/20" 
+                : "text-zinc-300 bg-zinc-900 border-zinc-700"
             )}>
               {badge}
             </span>
           )}
-          {liveHref && (
-            <a 
-              href={liveHref} 
-              target="_blank" 
-              rel="noreferrer" 
-              className="p-1.5 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 border border-zinc-800 transition-colors"
-              title="View Live App"
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          )}
-          {href && (
-            <a 
-              href={href} 
-              target="_blank" 
-              rel="noreferrer" 
-              className="p-1.5 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 border border-zinc-800 transition-colors"
-              title="View Source Code"
-            >
-              <Github className="w-3.5 h-3.5" />
-            </a>
-          )}
+          <div className="flex items-center gap-1.5 ml-auto sm:ml-0">
+            {liveHref && (
+              <a 
+                href={liveHref} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="p-1.5 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 border border-zinc-800 transition-colors"
+                title="View Live App"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
+            {href && (
+              <a 
+                href={href} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="p-1.5 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 border border-zinc-800 transition-colors"
+                title="View Source Code"
+              >
+                <Github className="w-3.5 h-3.5" />
+              </a>
+            )}
+          </div>
         </div>
       </div>
 
@@ -817,7 +819,7 @@ const EducationItem = ({
       </h3>
       <div className="flex items-center gap-2">
         {score && (
-          <span className="text-xs font-mono font-bold text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-2 py-0.5 rounded">
+          <span className="text-xs font-mono font-bold text-amber-300 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded">
             {score}
           </span>
         )}

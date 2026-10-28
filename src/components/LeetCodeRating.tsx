@@ -77,7 +77,7 @@ const LeetCodeRating = () => {
                 <div className="grid grid-cols-3 gap-1.5 mb-3">
                     <div className="text-center bg-zinc-950/60 border border-zinc-800/60 rounded-md py-1">
                         <div className="text-[9px] font-mono text-zinc-500 uppercase">Easy</div>
-                        <div className="text-xs font-mono font-semibold text-cyan-400">{data.easySolved}</div>
+                        <div className="text-xs font-mono font-semibold text-zinc-200">{data.easySolved}</div>
                     </div>
                     <div className="text-center bg-zinc-950/60 border border-zinc-800/60 rounded-md py-1">
                         <div className="text-[9px] font-mono text-zinc-500 uppercase">Med</div>

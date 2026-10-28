@@ -17,7 +17,7 @@ const getRankColor = (rank: string) => {
     if (r?.includes('candidate')) return 'text-violet-400 border-violet-500/20 bg-violet-500/10';
     if (r?.includes('expert')) return 'text-blue-400 border-blue-500/20 bg-blue-500/10';
     if (r?.includes('specialist')) return 'text-cyan-400 border-cyan-500/20 bg-cyan-500/10';
-    if (r?.includes('pupil')) return 'text-cyan-400 border-cyan-500/20 bg-cyan-500/10';
+    if (r?.includes('pupil')) return 'text-amber-400 border-amber-500/20 bg-amber-500/10';
     return 'text-zinc-400 border-zinc-700/30 bg-zinc-800/30';
 };
 
