@@ -1,17 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@100..900&family=Urbanist:wght@400;500;600;700&display=swap');
+
+/* Local Font Face Definitions for guaranteed zero-latency cross-device rendering (Phones, Tablets & Laptops) */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/instrument-serif-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/instrument-serif-italic.woff2') format('woff2');
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
-  .font-serif {
-    font-family: 'Playfair Display', serif;
+  .font-serif,
+  .font-display,
+  .font-heading,
+  .font-instrument {
+    font-family: 'Instrument Serif', Georgia, serif;
   }
 
   .font-urbanist {
     font-family: 'Urbanist', sans-serif;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
   }
 }
 
@@ -19,46 +50,35 @@
 
 @layer base {
   :root {
-    /* Cyberpunk color palette */
-    --background: 0 0% 3%;
-    --foreground: 120 100% 85%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 93%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 120 100% 85%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 93%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 120 100% 85%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 93%;
 
-    --primary: 120 100% 50%;
-    --primary-foreground: 0 0% 3%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
 
-    --secondary: 180 100% 50%;
-    --secondary-foreground: 0 0% 3%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 120 50% 60%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 63%;
 
-    --accent: 300 100% 70%;
-    --accent-foreground: 0 0% 3%;
+    --accent: 0 0% 14%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 120 30% 25%;
-    --input: 0 0% 15%;
-    --ring: 120 100% 50%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 0 0% 35%;
 
-    --radius: 0.25rem;
-
-    /* Custom hacker theme variables */
-    --neon-green: 120 100% 50%;
-    --neon-cyan: 180 100% 50%;
-    --neon-purple: 300 100% 70%;
-    --terminal-green: 120 100% 85%;
-    --matrix-green: 120 100% 40%;
-    --shadow-neon: 0 0 20px hsl(var(--neon-green) / 0.5);
-    --shadow-glow: 0 0 40px hsl(var(--neon-green) / 0.3);
-    --glitch-shadow: 2px 2px 0 hsl(var(--neon-cyan)), -2px -2px 0 hsl(var(--neon-purple));
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

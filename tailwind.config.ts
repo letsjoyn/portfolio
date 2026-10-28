@@ -19,7 +19,13 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Outfit', 'sans-serif'],
+				sans: ['Outfit', 'Inter', 'sans-serif'],
+				serif: ["'Instrument Serif'", 'Georgia', 'serif'],
+				display: ["'Instrument Serif'", 'Georgia', 'serif'],
+				heading: ["'Instrument Serif'", 'Georgia', 'serif'],
+				instrument: ["'Instrument Serif'", 'Georgia', 'serif'],
+				urbanist: ['Urbanist', 'sans-serif'],
+				mono: ['"JetBrains Mono"', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
