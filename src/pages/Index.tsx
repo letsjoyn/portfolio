@@ -463,14 +463,21 @@ const Index = () => {
 
         {/* Achievements Section */}
         <section id="achievements" className="flex flex-col gap-6 scroll-mt-28">
-          <SectionHeader title="Milestones & Recognition" count="6 Awards" />
+          <SectionHeader title="Milestones & Recognition" count="7 Awards" />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <AchievementTile
+              title="ICPC Regionalist — Amritapuri 2026"
+              detail="Qualified for onsite round, Coimbatore centre · Rank 269 in prelims · Team hellobye (MSRIT)"
+              bgImage="/lovable-uploads/icpc-amritapuri-2026.png"
+              badge="Regionalist"
+              href="https://amritaicpc.in/prelims-ranklist"
+            />
             <AchievementTile
               title="Meta PyTorch OpenEnv Hackathon"
               detail="Finalist — Top 2.5% of 31,000+ registrations · Grand Finale at SST Bangalore"
-              gradient="from-violet-950/80 via-indigo-950/40 to-black"
+              bgImage="/lovable-uploads/meta-openenv.png"
               badge="Finalist"
-              href="https://github.com/letsjoyn/meta-scalar-hack"
+              href="https://drive.google.com/file/d/1pOLfjjVxLWv5EK5nfN2dWxplXZ1JvOZ2/view"
             />
             <AchievementTile
               title="Smart India Hackathon 2025"
@@ -925,8 +932,9 @@ const AchievementTile = ({
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
       
       {badge && (
-        <div className="absolute top-2.5 right-2.5 bg-zinc-900/90 backdrop-blur-md text-zinc-300 text-[10px] font-mono px-2.5 py-0.5 rounded-full border border-zinc-700 shadow-sm z-10">
+        <div className="absolute top-2.5 right-2.5 bg-zinc-900/90 backdrop-blur-md text-zinc-300 text-[10px] font-mono px-2.5 py-0.5 rounded-full border border-zinc-700 shadow-sm z-10 flex items-center gap-1">
           {badge}
+          {href && <ArrowUpRight className="w-2.5 h-2.5 opacity-60 group-hover:opacity-100 transition-opacity" />}
         </div>
       )}
 
